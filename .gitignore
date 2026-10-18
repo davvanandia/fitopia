@@ -1,0 +1,13 @@
+# Data pribadi (foto, tubuh, kalibrasi)
+foto_*.jpg
+hasil_*.png
+riwayat_fitopia.csv
+riwayat_progress.png
+kalibrasi*.json
+# Model diunduh otomatis
+*.task
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

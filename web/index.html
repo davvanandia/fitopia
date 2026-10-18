@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fitopia – Katering diet untuk perempuan korporat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="wrap bar"><span class="logo">Fitopia</span><span id="srv" class="pill off">Server: memeriksa…</span></header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Scan tubuhmu, dapatkan olahraga dan menu yang pas.</h1>
+    <p>Berdiri di depan kamera. Sistem mengestimasi tinggi dan berat badan, lalu menyusun olahraga dan menu katering harianmu.</p>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <div class="cam">
+        <video id="cam" autoplay playsinline muted></video>
+        <div class="guide" aria-hidden="true"></div>
+        <div id="count" class="count" aria-live="assertive"></div>
+      </div>
+      <p id="msg" class="msg" role="status">Izinkan kamera, lalu berdiri 2–3 meter dari layar sampai seluruh tubuh terlihat.</p>
+    </div>
+
+    <form class="card" id="form">
+      <h2>Data kamu</h2>
+      <div class="two">
+        <label>Tinggi asli (cm)<input id="tb" type="number" min="100" max="220" placeholder="untuk kalibrasi"></label>
+        <label>Berat badan (kg)<input id="bb" type="number" min="25" max="200" step="0.1" placeholder="dari timbangan"></label>
+        <label>Usia<input id="usia" type="number" min="15" max="90" value="28"></label>
+        <label>Aktivitas<select id="akt"><option value="sedentari">Duduk seharian</option><option value="ringan" selected>Ringan</option><option value="sedang">Sedang</option><option value="aktif">Aktif</option></select></label>
+      </div>
+      <div class="btns">
+        <button type="button" id="scan" class="btn">Scan tubuh (timer 5 detik)</button>
+        <button type="button" id="kal" class="btn ghost">Kalibrasi (sekali)</button>
+        <button type="button" id="man" class="btn ghost">Hitung manual</button>
+      </div>
+      <p class="hint">Kalibrasi pertama: isi tinggi dan berat asli, lalu tekan Kalibrasi. Setelah itu berat dapat diestimasi kamera. Hasil adalah estimasi edukasi, bukan diagnosis medis.</p>
+    </form>
+  </section>
+
+  <section id="hasil" class="card" hidden>
+    <h2>Hasil analisis</h2>
+    <div class="stats" id="stats"></div>
+    <div class="bmi"><div class="track"><span id="mark"></span></div><div class="lbl"><span>Kurus</span><span>Normal</span><span>Over</span><span>Obesitas</span></div></div>
+    <div class="two">
+      <div><h3>Metode olahraga</h3><p id="olah"></p></div>
+      <div><h3>Menu harian</h3><ul id="menu" class="menu"></ul></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Riwayat</h2>
+    <svg id="grafik" viewBox="0 0 600 140" role="img" aria-label="Grafik berat badan"></svg>
+    <div class="tbl"><table><thead><tr><th>Waktu</th><th>TB</th><th>BB</th><th>BMI</th><th>Sumber</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </section>
+</main>
+<footer class="wrap">Fitopia – prototype. Kemasan karton go green · harga premium · untuk perempuan korporat.</footer>
+<script src="app.js"></script>
+</body>
+</html>
